@@ -97,38 +97,52 @@
 
 \begin{document}
 
-\title{\textsf{Computer Graphics Lab #2\\ Animation and 3D}
+\title{\textsf{Computer Graphics Lab \#2\\ Splines, Animation and 3D}
 \marginpar{\vspace{-1.2cm}\includegraphics[height=1.4cm] {figs/logo_uerj_cor_small.png}}} 
 
 \author{Prof.\ Ricardo Fabbri, Ph.D.\\[1em]
-\small{
-Polytechnic Institute (IPRJ) at the Rio de Janeiro State University\\
-\url{http://wiki.nosdigitais.teia.org.br/CG}}
+\small{Polytechnic Institute (IPRJ) at the Rio de Janeiro State University}\\
+\small{\url{http://wiki.nosdigitais.teia.org.br/CG}}
 }
  
 
 \date{\today}
 \maketitle
 \begin{abstract}
-Now that you did Lab\#1 which consisted of rotating a camera around an
-arbitrary axis, its time to move on to further concepts and consolidate your
+Now that you finished Lab\#1 which consisted of rotating a camera around an
+arbitrary axis using the Blender Python API, its time to move on to further concepts and consolidate your
 learning. This should help you with the bigger goal of the final project
 of generating a complex animation.
 \end{abstract}
 \vspace{2em}
 
 Any material need for the lab can be found from the course
-website. \textbf{All extra work will be considered for bonus grade points.}
+website. Please render all your videos in full HD 1080p quality.
+\textbf{All extra work will be considered for bonus grade points.}
 
 \section{Construct the IPRJ Logo in 2D}
-Your goal is to generate the IPRJ logo of Figure~\ref{fig:iprj:logo} in Blender,
-in multiple ways. Steps:
+Your goal is to generate the IPRJ logo of Figure~\ref{fig:iprj:logo} (or any
+official variant) in Blender~\cite{blender},
+using two Python API's: Blender OpenGL \texttt{bgl} and standard Blender \texttt{bpy}. 
+\begin{figure}
+\centering
+\includegraphics[width=0.5\linewidth]{figs/logo-iprj2.png}%
+\caption{% 
+IPRJ logo, to be programmatically drawn with splines and animated, in both
+Blender and OpenGL.
+}\label{fig:iprj:logo}
+\end{figure}
+
+
+Steps:
 \begin{enumerate}
-\item Construct the IPRJ logo in 2D using the standard Blender API, without any
+\item Construct the IPRJ logo in 2D using the standard Blender API
+(\texttt{bpy}), without any
 data file. The standard blender API is used to help you construct models that
 can be further manipulated by other Blender scripts or GUI. Use 
 spline curves and surfaces for the sine wave and curved letters, possibly for everything.
-\item Construct the IPRJ logo in 2D using the Blender OpenGL API, without any
+\item Construct the IPRJ logo in 2D using the Blender OpenGL API
+(\texttt{bgl}), without any
 data file. The OpenGL API is best for making blender tools that display
 interactive graphics
 \emph{prior} to a full render. Use 
@@ -138,10 +152,19 @@ spline curves and surfaces for the sine wave and curved letters, possibly for ev
 \section{Animate the IPRJ Logo}
 \begin{enumerate}
 \item Create an animation of the IPRJ logo. Make the sine wave oscilate in 2D or 
-3D (off the plane). 
-\item Make the ball bounce. 
-\item Devise your own effects. Be creative! If done with 
-stunning, professional high quality, this can pass as a final project.
+3D (off the plane). Do this with Blender OpenGL and standard Blender API
+\item Make the ball bounce or roll in a physically pleasing way. You may choose
+to do it in \texttt{bgl} or \texttt{bpy} API (and similarly for the next items)
+\item Make an intense zoom-in effect in some part and move the zoom around --
+you will realize an advantage of
+using splines instead of polylines: \emph{scalability}!
+\item Devise your own effects. Make the sine wave oscilate in crazy ways,
+\eg, modulate it a real sound signal. Add a motion blurring effect, brushed
+metal textures, gradients, multiple illumination, futuristic glass texture, lens flare. Be creative!
+\item \textbf{If done with,
+stunning, professional high quality, or contains a great many different ways of
+doing things, or lasts more than 5min, this can also pass as a final project.}
+You may use the blender GUI for some or most of this item, you don't have to do everything programmatically.
 \end{enumerate}
 
 \bibliographystyle{IEEEtran}
